@@ -1,0 +1,20 @@
+<app-header titulo="Cadastrar Item" rota="item-grupo3" cor="secondary"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="dark" class="ion-text-left">
+    <h6>Cadastro de Itens</h6>
+  </ion-text>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Observações</ion-label>
+      <ion-textarea autoGrow formControlName="observacao"></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid">Salvar</ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<app-header titulo="Cadastrar Emprestimo" rota="emprestimo-grupo3" cor="secondary"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="dark" class="ion-text-left">
+    <h6>Realizar Emprestimo</h6>
+  </ion-text>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Pessoa</ion-label>
+      <ion-select formControlName="nome">
+        <ion-select-option *ngFor="let user of users" [value]="user.nome" >{{user.nome}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Item</ion-label>
+      <ion-select formControlName="item">
+        <ion-select-option *ngFor="let item of itens" [value]="item.nome" >{{item.nome}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data de Devolução</ion-label>
+      <ion-datetime formControlName="data" hour-cycle="h23" locale="en-GB"></ion-datetime>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid">Emprestar</ion-button>
+  </form>
+
+</ion-content>

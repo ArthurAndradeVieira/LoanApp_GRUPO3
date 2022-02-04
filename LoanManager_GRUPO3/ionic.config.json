@@ -1,0 +1,7 @@
+{
+  "name": "LoanManager_GRUPO3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
